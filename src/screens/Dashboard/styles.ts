@@ -3,6 +3,7 @@ import { FlatList } from 'react-native'
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize'
 import { Feather } from '@expo/vector-icons'
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { BorderlessButton } from 'react-native-gesture-handler'
 
 import { DataListProps } from '.'
 
@@ -59,10 +60,12 @@ export const UserName = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
 `;
 
+export const LogoutButton = styled(BorderlessButton)``;
+
 export const Icon = styled(Feather)`
   color: ${({ theme }) => theme.colors.secondary};
   font-size: ${RFValue(24)}px;
-`
+`;
 
 export const HighlightCards = styled.ScrollView.attrs({
   horizontal: true,
@@ -73,7 +76,7 @@ export const HighlightCards = styled.ScrollView.attrs({
 
   position: absolute;
   margin-top: ${RFPercentage(23)}px;
-`
+`;
 
 export const Transactions = styled.View`
   flex: 1;
@@ -97,6 +100,4 @@ export const TransactionList = styled(
   contentContainerStyle: {
     paddingBottom: getBottomSpace()
   }
-})`
-
-`
+})``;
