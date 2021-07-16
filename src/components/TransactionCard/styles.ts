@@ -16,7 +16,7 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-size: ${RFValue(14)}px;
-  font-family: ${({ theme }) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.medium};
 `;
 
 export const Amount = styled.Text<TransactionType>`
@@ -37,7 +37,7 @@ export const Footer = styled.View`
   margin-top: 19px;
 `;
 
-export const Category = styled.Text`
+export const Category = styled.View`
   flex-direction: row;
   align-items: center;
 `;
@@ -45,13 +45,13 @@ export const Category = styled.Text`
 export const Icon = styled(Feather)`
   font-size: ${RFValue(20)}px;
   color: ${({ theme }) => theme.colors.text};
-  margin-right: 17px;
 `;
 
 export const CategoryName = styled.Text`
   font-size: ${RFValue(14)}px;
   color: ${({ theme }) => theme.colors.text};
-  margin-left: 17px;
+
+  margin-left: 12px;
 `;
 
 export const Date = styled.Text`

@@ -14,7 +14,7 @@ export const Container = styled.View`
 
 export const Header = styled.View`
   width: 100%;
-  height: ${RFPercentage(42)}px;
+  height: ${RFPercentage(34)}px;
 
   background-color: ${({ theme }) => theme.colors.primary};
 `
@@ -23,7 +23,8 @@ export const UserWrapper = styled.View`
   width: 100%;
 
   padding: 0 24px;
-  margin-top: ${getStatusBarHeight() + RFValue(28)}px;
+  margin-top: ${getStatusBarHeight()}px;
+
 
   flex-direction: row;
   justify-content: space-between;
@@ -75,7 +76,7 @@ export const HighlightCards = styled.ScrollView.attrs({
   width: 100%;
 
   position: absolute;
-  margin-top: ${RFPercentage(23)}px;
+  margin-top: ${RFPercentage(17)}px;
 `;
 
 export const Transactions = styled.View`
@@ -101,3 +102,9 @@ export const TransactionList = styled(
     paddingBottom: getBottomSpace()
   }
 })``;
+
+export const LoadContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`
