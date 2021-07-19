@@ -18,28 +18,32 @@ import {
 
 import theme from './src/global/styles/theme'
 
-import { AppRoutes } from './src/routes/app.routes';
+import { AuthProvider, useAuth } from './src/hooks/auth';
+import { Routes } from './src/routes';
 
 export default function App(): JSX.Element {
+
+  const { userStorageLoading } = useAuth()
+
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
     Poppins_500Medium,
     Poppins_700Bold
   });
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded || userStorageLoading) {
     return <AppLoading />
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar
-          backgroundColor={theme.colors.primary}
-          barStyle="light-content"
-        />
-        <AppRoutes />
-      </NavigationContainer>
+      <StatusBar
+        backgroundColor={theme.colors.primary}
+        barStyle="light-content"
+      />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
